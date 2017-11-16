@@ -34,12 +34,16 @@ class ViewController: UIViewController {
         self?.tableView.reloadData()
       }
     } else if segue.identifier == "showDetails" {
+      guard let path = tableView.indexPathForSelectedRow else {
+        fatalError("'showDetails' segue performed without tableView selection")
+      }
       destination.todoTitle = tableData[path.row]
       destination.updateTitle = { [weak self] newTitle in
         self?.tableData[path.row] = newTitle
         self?.tableView.reloadRows(at: [path], with: .automatic)
       }
     } else {
+      fatalError("Cannot handle segue: \(segue), sender: \(sender ?? "(none)")")
     }
   }
 }
