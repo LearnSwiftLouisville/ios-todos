@@ -23,8 +23,10 @@ class ViewController: UIViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // We need to configure properties on this controller before it is shown.
     let destination = segue.destination as! DetailViewController
-    
+
+    // Checking segue identifiers is okay, but sub-classing UIStoryboardSegue would be better.
     if segue.identifier == "todoCreation" {
       destination.todoTitle = ""
       destination.updateTitle = { [weak self] newTitle in
@@ -32,18 +34,18 @@ class ViewController: UIViewController {
         self?.tableView.reloadData()
       }
     } else if segue.identifier == "showDetails" {
-      let path = tableView.indexPathForSelectedRow!
       destination.todoTitle = tableData[path.row]
       destination.updateTitle = { [weak self] newTitle in
         self?.tableData[path.row] = newTitle
         self?.tableView.reloadRows(at: [path], with: .automatic)
       }
+    } else {
     }
   }
 }
 
 extension ViewController: UITableViewDelegate {
-  
+  // TODO: Add methods for handling deletion, etc.
 }
 
 extension ViewController: UITableViewDataSource {
