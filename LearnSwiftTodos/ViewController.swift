@@ -5,28 +5,28 @@ import UIKit
 class ViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var addButton: UIBarButtonItem!
-
+  
   var tableData: [String] = []
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-
+  
   @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
-//    tableData.append("Hello!")
-//    tableView.reloadData()
+    //    tableData.append("Hello!")
+    //    tableView.reloadData()
     performSegue(withIdentifier: "todoCreation", sender: addButton)
   }
-
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let destination = segue.destination as! DetailViewController
-
+    
     if segue.identifier == "todoCreation" {
       destination.todoTitle = ""
       destination.updateTitle = { [weak self] newTitle in
@@ -45,14 +45,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
-
+  
 }
 
 extension ViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tableData.count
   }
-
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "todo-cell")!
     let title = tableData[indexPath.row]
