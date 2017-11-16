@@ -19,8 +19,6 @@ class ViewController: UIViewController {
   }
   
   @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
-    //    tableData.append("Hello!")
-    //    tableView.reloadData()
     performSegue(withIdentifier: "todoCreation", sender: addButton)
   }
   
