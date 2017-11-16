@@ -23,8 +23,24 @@ class LearnSwiftTodosUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+      let app = XCUIApplication()
+      // Add a todo
+      app.navigationBars["Todos"].buttons["Add"].tap()
+      let textField = app.otherElements.containing(.navigationBar, identifier:"LearnSwiftTodos.DetailView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
+      textField.tap()
+      textField.typeText("test name")
+
+      // Click done
+      let doneButton = app.navigationBars["LearnSwiftTodos.DetailView"].buttons["Done"]
+      doneButton.tap()
+      let newTodoCell = app.tables.staticTexts["test name"]
+      XCTAssert(newTodoCell.exists)
+
+      newTodoCell.tap()
+      textField.tap()
+      textField.typeText(" edited")
+      doneButton.tap()
+      let editedTodoCell = app.tables.staticTexts["test name edited"]
+      XCTAssert(editedTodoCell.exists)
     }
-    
 }

@@ -14,6 +14,7 @@
 		E2C0EDF91FBD05BA0047F484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C0EDF71FBD05BA0047F484 /* LaunchScreen.storyboard */; };
 		E2C0EE041FBD05BA0047F484 /* LearnSwiftTodosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0EE031FBD05BA0047F484 /* LearnSwiftTodosTests.swift */; };
 		E2C0EE0F1FBD05BA0047F484 /* LearnSwiftTodosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0EE0E1FBD05BA0047F484 /* LearnSwiftTodosUITests.swift */; };
+		E2C0EE1D1FBD0D230047F484 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0EE1C1FBD0D230047F484 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E2C0EE0A1FBD05BA0047F484 /* LearnSwiftTodosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnSwiftTodosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C0EE0E1FBD05BA0047F484 /* LearnSwiftTodosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSwiftTodosUITests.swift; sourceTree = "<group>"; };
 		E2C0EE101FBD05BA0047F484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C0EE1C1FBD0D230047F484 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E2C0EDEE1FBD05BA0047F484 /* AppDelegate.swift */,
 				E2C0EDF01FBD05BA0047F484 /* ViewController.swift */,
+				E2C0EE1C1FBD0D230047F484 /* DetailViewController.swift */,
 				E2C0EDF21FBD05BA0047F484 /* Main.storyboard */,
 				E2C0EDF51FBD05BA0047F484 /* Assets.xcassets */,
 				E2C0EDF71FBD05BA0047F484 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C0EE1D1FBD0D230047F484 /* DetailViewController.swift in Sources */,
 				E2C0EDF11FBD05BA0047F484 /* ViewController.swift in Sources */,
 				E2C0EDEF1FBD05BA0047F484 /* AppDelegate.swift in Sources */,
 			);
